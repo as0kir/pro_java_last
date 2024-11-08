@@ -3,9 +3,9 @@ spring:
     name: limits
 
   flyway:
-    user: "postgres"
+    user: postgres
     password: ${POSTRGRE_PWD}
-    url: "jdbc:postgresql://localhost:5433/test_pro6"
+    url: jdbc:postgresql://localhost:5433/test_pro6
 
   jpa:
     show-sql: true
@@ -15,14 +15,15 @@ spring:
     hibernate:
       ddl-auto: none
 
-app:
   datasource:
-      classname: "org.postgresql.ds.PGSimpleDataSource"
-      servername: "localhost"
-      databaseName: "test_pro6"
-      portnumber: "5433"
-      user: "tst_user"
-      password: "tst_pwd"
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5433/test_pro6
+    username: tst_user
+    password: tst_pwd
+    type: com.zaxxer.hikari.HikariDataSource
+
+app:
+  sum_limit: 10000
 
 logging:
   level:

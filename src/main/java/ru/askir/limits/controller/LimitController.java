@@ -1,6 +1,5 @@
 package ru.askir.limits.controller;
 
-import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import ru.askir.limits.dto.LimitRequest;
 import ru.askir.limits.dto.LimitResponse;
@@ -15,11 +14,13 @@ public class LimitController {
         this.limitService = limitService;
     }
 
-    @PostMapping("/change")
-    @ResponseStatus(HttpStatus.OK)
-    LimitResponse changeLimit(@RequestBody LimitRequest limitRequest) {
+    @PostMapping("/decrease")
+    LimitResponse decreaseLimit(@RequestBody LimitRequest limitRequest) {
+        return limitService.decreaseLimit(limitRequest);
+    }
 
-        LimitResponse limitResponse = limitService.changeLimit(limitRequest);
-        return limitResponse;
+    @PostMapping("/increase")
+    LimitResponse inceaseLimit(@RequestBody LimitRequest limitRequest) {
+        return limitService.increaseLimit(limitRequest);
     }
 }

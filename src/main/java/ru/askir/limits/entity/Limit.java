@@ -18,4 +18,12 @@ public class Limit {
     private Long userId;
 
     private BigDecimal sumLimit;
+
+    public Limit() {
+    }
+
+    public Limit(Long userId, BigDecimal sumLimit) {
+        this.userId = userId;
+        this.sumLimit = sumLimit;
+    }
 }

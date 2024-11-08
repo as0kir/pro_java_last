@@ -4,7 +4,7 @@ import ru.askir.limits.dto.LimitRequest;
 import ru.askir.limits.dto.LimitResponse;
 
 public interface LimitService {
-    LimitResponse changeLimit(LimitRequest limitRequest);
-
+    LimitResponse decreaseLimit(LimitRequest limitRequest);
+    LimitResponse increaseLimit(LimitRequest limitRequest);
     void initLimits();
 }
