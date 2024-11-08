@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: limits
+
+  flyway:
+    user: postgres
+    password: ${POSTRGRE_PWD}
+    url: jdbc:postgresql://localhost:5433/test_pro6
+
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: none
+
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5433/test_pro6
+    username: tst_user
+    password: tst_pwd
+    type: com.zaxxer.hikari.HikariDataSource
+
+app:
+  sum_limit: 10000
+
+logging:
+  level:
+    org.springframework.web: debug
+    org.apache: debug
+    org.flywaydb: debug
